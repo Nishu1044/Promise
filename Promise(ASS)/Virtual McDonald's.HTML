@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order-Food</title>
+</head>
+<body>
+  <button id="A">button</button>
+</body>
+</html>
+
+<script>
+    
+    const Order_Food = document.getElementById("A");
+
+    // Order_Food.addEventListener("click", function(ordered){
+    //      const promise = new Promise(function(resolve,reject){
+    //         setTimeout(()=>{
+    //            resolve(ordered)
+    //         },5000)
+    //      })
+    // })
+
+    function order(order,cancle){
+        return new Promise(function(resolve,reject){
+            setTimeout(()=>{
+               resolve(order);
+            },5000);
+         })
+    }
+    Order_Food.addEventListener("click", function(){
+         let promise = order("done")
+         promise.then(function(data){
+            alert(data)
+         })
+    })
+
+
+</script>
